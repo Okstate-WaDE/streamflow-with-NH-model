@@ -1,0 +1,261 @@
+2023-10-05 19:58:56,587: Logging to runs_regional/531_basins_multi_forcings_temporal_split_ensemble_member_0_0510_195856/output.log initialized.
+2023-10-05 19:58:56,587: ### Folder structure created at runs_regional/531_basins_multi_forcings_temporal_split_ensemble_member_0_0510_195856
+2023-10-05 19:58:56,587: ### Run configurations for 531_basins_multi_forcings_temporal_split_ensemble_member_0
+2023-10-05 19:58:56,587: batch_size: 256
+2023-10-05 19:58:56,587: clip_gradient_norm: 1
+2023-10-05 19:58:56,587: data_dir: data/CAMELS_US
+2023-10-05 19:58:56,587: dataset: camels_us
+2023-10-05 19:58:56,587: device: cuda:2
+2023-10-05 19:58:56,587: dynamic_inputs: ['prcp(mm/day)_daymet', 'srad(W/m2)_daymet', 'tmax(C)_daymet', 'tmin(C)_daymet', 'vp(Pa)_daymet', 'PRCP(mm/day)_nldas', 'SRAD(W/m2)_nldas', 'Tmax(C)_nldas', 'Tmin(C)_nldas', 'Vp(Pa)_nldas', 'PRCP(mm/day)_maurer', 'SRAD(W/m2)_maurer', 'Tmax(C)_maurer', 'Tmin(C)_maurer', 'Vp(Pa)_maurer']
+2023-10-05 19:58:56,587: epochs: 30
+2023-10-05 19:58:56,587: experiment_name: 531_basins_multi_forcings_temporal_split_ensemble_member_0
+2023-10-05 19:58:56,588: forcings: ['daymet', 'maurer', 'nldas']
+2023-10-05 19:58:56,588: head: regression
+2023-10-05 19:58:56,588: hidden_size: 256
+2023-10-05 19:58:56,588: initial_forget_bias: 3
+2023-10-05 19:58:56,588: learning_rate: {0: 0.001, 20: 0.0005, 25: 0.0001}
+2023-10-05 19:58:56,588: log_interval: 5
+2023-10-05 19:58:56,588: log_tensorboard: True
+2023-10-05 19:58:56,588: loss: NSE
+2023-10-05 19:58:56,588: metrics: ['NSE']
+2023-10-05 19:58:56,588: model: cudalstm
+2023-10-05 19:58:56,588: num_workers: 8
+2023-10-05 19:58:56,588: optimizer: Adam
+2023-10-05 19:58:56,588: output_activation: linear
+2023-10-05 19:58:56,588: output_dropout: 0.4
+2023-10-05 19:58:56,588: predict_last_n: 1
+2023-10-05 19:58:56,588: run_dir: runs_regional/531_basins_multi_forcings_temporal_split_ensemble_member_0_0510_195856
+2023-10-05 19:58:56,588: save_validation_results: True
+2023-10-05 19:58:56,588: save_weights_every: 1
+2023-10-05 19:58:56,588: seed: None
+2023-10-05 19:58:56,588: seq_length: 365
+2023-10-05 19:58:56,588: static_attributes: ['elev_mean', 'slope_mean', 'area_gages2', 'frac_forest', 'lai_max', 'lai_diff', 'gvf_max', 'gvf_diff', 'soil_depth_pelletier', 'soil_depth_statsgo', 'soil_porosity', 'soil_conductivity', 'max_water_content', 'sand_frac', 'silt_frac', 'clay_frac', 'carbonate_rocks_frac', 'geol_permeability', 'p_mean', 'pet_mean', 'aridity', 'frac_snow', 'high_prec_freq', 'high_prec_dur', 'low_prec_freq', 'low_prec_dur']
+2023-10-05 19:58:56,588: target_variables: ['QObs(mm/d)']
+2023-10-05 19:58:56,588: test_basin_file: data/experiment_data/basin_files/531_basin_list.txt
+2023-10-05 19:58:56,588: test_end_date: 1999-09-30 00:00:00
+2023-10-05 19:58:56,588: test_start_date: 1989-10-01 00:00:00
+2023-10-05 19:58:56,588: train_basin_file: data/experiment_data/basin_files/531_basin_list.txt
+2023-10-05 19:58:56,588: train_end_date: 2008-09-30 00:00:00
+2023-10-05 19:58:56,588: train_start_date: 1999-10-01 00:00:00
+2023-10-05 19:58:56,588: validate_every: 1
+2023-10-05 19:58:56,588: validate_n_random_basins: 531
+2023-10-05 19:58:56,588: validation_basin_file: data/experiment_data/basin_files/531_basin_list.txt
+2023-10-05 19:58:56,588: validation_end_date: 1989-09-30 00:00:00
+2023-10-05 19:58:56,588: validation_start_date: 1980-10-01 00:00:00
+2023-10-05 19:58:56,589: number_of_basins: 531
+2023-10-05 19:58:56,589: train_dir: runs_regional/531_basins_multi_forcings_temporal_split_ensemble_member_0_0510_195856/train_data
+2023-10-05 19:58:56,589: img_log_dir: runs_regional/531_basins_multi_forcings_temporal_split_ensemble_member_0_0510_195856/img_log
+2023-10-05 19:59:04,618: ### Device cuda:2 will be used for training
+2023-10-05 19:59:04,933: Loading basin data into xarray data set.
+2023-10-05 20:00:38,166: Calculating target variable stds per basin
+2023-10-05 20:00:39,098: Create lookup table and convert to pytorch tensor
+2023-10-05 20:19:40,979: Epoch 1 average loss: avg_loss: 0.02846, avg_total_loss: 0.02846
+2023-10-05 20:21:54,165: The following basins had not enough valid target values to calculate a standard deviation: 02427250. NSE loss values for this basin will be NaN.
+2023-10-05 20:25:45,955: The following basins had not enough valid target values to calculate a standard deviation: 09484600. NSE loss values for this basin will be NaN.
+2023-10-05 20:27:30,976: Stored metrics at runs_regional/531_basins_multi_forcings_temporal_split_ensemble_member_0_0510_195856/validation/model_epoch001/validation_metrics.csv
+2023-10-05 20:27:31,130: Stored results at runs_regional/531_basins_multi_forcings_temporal_split_ensemble_member_0_0510_195856/validation/model_epoch001/validation_results.p
+2023-10-05 20:27:31,140: Epoch 1 average validation loss: 0.03073 -- Median validation metrics: avg_loss: 0.03073, NSE: 0.67046
+2023-10-05 20:45:47,760: Epoch 2 average loss: avg_loss: 0.01996, avg_total_loss: 0.01996
+2023-10-05 20:52:19,315: Stored metrics at runs_regional/531_basins_multi_forcings_temporal_split_ensemble_member_0_0510_195856/validation/model_epoch002/validation_metrics.csv
+2023-10-05 20:52:19,450: Stored results at runs_regional/531_basins_multi_forcings_temporal_split_ensemble_member_0_0510_195856/validation/model_epoch002/validation_results.p
+2023-10-05 20:52:19,460: Epoch 2 average validation loss: 0.02503 -- Median validation metrics: avg_loss: 0.02503, NSE: 0.71441
+2023-10-05 21:10:36,230: Epoch 3 average loss: avg_loss: 0.01793, avg_total_loss: 0.01793
+2023-10-05 21:17:20,943: Stored metrics at runs_regional/531_basins_multi_forcings_temporal_split_ensemble_member_0_0510_195856/validation/model_epoch003/validation_metrics.csv
+2023-10-05 21:17:21,087: Stored results at runs_regional/531_basins_multi_forcings_temporal_split_ensemble_member_0_0510_195856/validation/model_epoch003/validation_results.p
+2023-10-05 21:17:21,097: Epoch 3 average validation loss: 0.02285 -- Median validation metrics: avg_loss: 0.02285, NSE: 0.73365
+2023-10-05 21:35:40,425: Epoch 4 average loss: avg_loss: 0.01668, avg_total_loss: 0.01668
+2023-10-05 21:42:19,067: Stored metrics at runs_regional/531_basins_multi_forcings_temporal_split_ensemble_member_0_0510_195856/validation/model_epoch004/validation_metrics.csv
+2023-10-05 21:42:19,212: Stored results at runs_regional/531_basins_multi_forcings_temporal_split_ensemble_member_0_0510_195856/validation/model_epoch004/validation_results.p
+2023-10-05 21:42:19,222: Epoch 4 average validation loss: 0.02208 -- Median validation metrics: avg_loss: 0.02208, NSE: 0.74333
+2023-10-05 22:00:34,237: Epoch 5 average loss: avg_loss: 0.01573, avg_total_loss: 0.01573
+2023-10-05 22:07:04,211: Stored metrics at runs_regional/531_basins_multi_forcings_temporal_split_ensemble_member_0_0510_195856/validation/model_epoch005/validation_metrics.csv
+2023-10-05 22:07:04,386: Stored results at runs_regional/531_basins_multi_forcings_temporal_split_ensemble_member_0_0510_195856/validation/model_epoch005/validation_results.p
+2023-10-05 22:07:04,397: Epoch 5 average validation loss: 0.02425 -- Median validation metrics: avg_loss: 0.02425, NSE: 0.75393
+2023-10-05 22:25:21,238: Epoch 6 average loss: avg_loss: 0.01502, avg_total_loss: 0.01502
+2023-10-05 22:31:50,404: Stored metrics at runs_regional/531_basins_multi_forcings_temporal_split_ensemble_member_0_0510_195856/validation/model_epoch006/validation_metrics.csv
+2023-10-05 22:31:50,543: Stored results at runs_regional/531_basins_multi_forcings_temporal_split_ensemble_member_0_0510_195856/validation/model_epoch006/validation_results.p
+2023-10-05 22:31:50,554: Epoch 6 average validation loss: 0.02226 -- Median validation metrics: avg_loss: 0.02226, NSE: 0.75350
+2023-10-05 22:50:07,107: Epoch 7 average loss: avg_loss: 0.01446, avg_total_loss: 0.01446
+2023-10-05 22:56:38,279: Stored metrics at runs_regional/531_basins_multi_forcings_temporal_split_ensemble_member_0_0510_195856/validation/model_epoch007/validation_metrics.csv
+2023-10-05 22:56:38,419: Stored results at runs_regional/531_basins_multi_forcings_temporal_split_ensemble_member_0_0510_195856/validation/model_epoch007/validation_results.p
+2023-10-05 22:56:38,430: Epoch 7 average validation loss: 0.02590 -- Median validation metrics: avg_loss: 0.02590, NSE: 0.75006
+2023-10-05 23:15:04,972: Epoch 8 average loss: avg_loss: 0.01399, avg_total_loss: 0.01399
+2023-10-05 23:21:43,140: Stored metrics at runs_regional/531_basins_multi_forcings_temporal_split_ensemble_member_0_0510_195856/validation/model_epoch008/validation_metrics.csv
+2023-10-05 23:21:43,286: Stored results at runs_regional/531_basins_multi_forcings_temporal_split_ensemble_member_0_0510_195856/validation/model_epoch008/validation_results.p
+2023-10-05 23:21:43,297: Epoch 8 average validation loss: 0.02176 -- Median validation metrics: avg_loss: 0.02176, NSE: 0.75233
+2023-10-05 23:40:00,861: Epoch 9 average loss: avg_loss: 0.01356, avg_total_loss: 0.01356
+2023-10-05 23:46:34,497: Stored metrics at runs_regional/531_basins_multi_forcings_temporal_split_ensemble_member_0_0510_195856/validation/model_epoch009/validation_metrics.csv
+2023-10-05 23:46:34,648: Stored results at runs_regional/531_basins_multi_forcings_temporal_split_ensemble_member_0_0510_195856/validation/model_epoch009/validation_results.p
+2023-10-05 23:46:34,659: Epoch 9 average validation loss: 0.02161 -- Median validation metrics: avg_loss: 0.02161, NSE: 0.76360
+2023-10-06 00:04:49,532: Epoch 10 average loss: avg_loss: 0.01318, avg_total_loss: 0.01318
+2023-10-06 00:11:30,458: Stored metrics at runs_regional/531_basins_multi_forcings_temporal_split_ensemble_member_0_0510_195856/validation/model_epoch010/validation_metrics.csv
+2023-10-06 00:11:30,599: Stored results at runs_regional/531_basins_multi_forcings_temporal_split_ensemble_member_0_0510_195856/validation/model_epoch010/validation_results.p
+2023-10-06 00:11:30,612: Epoch 10 average validation loss: 0.02099 -- Median validation metrics: avg_loss: 0.02099, NSE: 0.74873
+2023-10-06 00:29:47,408: Epoch 11 average loss: avg_loss: 0.01265, avg_total_loss: 0.01265
+2023-10-06 00:36:17,809: Stored metrics at runs_regional/531_basins_multi_forcings_temporal_split_ensemble_member_0_0510_195856/validation/model_epoch011/validation_metrics.csv
+2023-10-06 00:36:17,978: Stored results at runs_regional/531_basins_multi_forcings_temporal_split_ensemble_member_0_0510_195856/validation/model_epoch011/validation_results.p
+2023-10-06 00:36:17,989: Epoch 11 average validation loss: 0.02096 -- Median validation metrics: avg_loss: 0.02096, NSE: 0.74750
+2023-10-06 00:54:33,728: Epoch 12 average loss: avg_loss: 0.01263, avg_total_loss: 0.01263
+2023-10-06 01:01:11,289: Stored metrics at runs_regional/531_basins_multi_forcings_temporal_split_ensemble_member_0_0510_195856/validation/model_epoch012/validation_metrics.csv
+2023-10-06 01:01:11,425: Stored results at runs_regional/531_basins_multi_forcings_temporal_split_ensemble_member_0_0510_195856/validation/model_epoch012/validation_results.p
+2023-10-06 01:01:11,436: Epoch 12 average validation loss: 0.02862 -- Median validation metrics: avg_loss: 0.02862, NSE: 0.75651
+2023-10-06 01:19:29,067: Epoch 13 average loss: avg_loss: 0.01193, avg_total_loss: 0.01193
+2023-10-06 01:26:05,086: Stored metrics at runs_regional/531_basins_multi_forcings_temporal_split_ensemble_member_0_0510_195856/validation/model_epoch013/validation_metrics.csv
+2023-10-06 01:26:05,231: Stored results at runs_regional/531_basins_multi_forcings_temporal_split_ensemble_member_0_0510_195856/validation/model_epoch013/validation_results.p
+2023-10-06 01:26:05,242: Epoch 13 average validation loss: 0.02095 -- Median validation metrics: avg_loss: 0.02095, NSE: 0.75423
+2023-10-06 01:44:21,892: Epoch 14 average loss: avg_loss: 0.01192, avg_total_loss: 0.01192
+2023-10-06 01:50:57,648: Stored metrics at runs_regional/531_basins_multi_forcings_temporal_split_ensemble_member_0_0510_195856/validation/model_epoch014/validation_metrics.csv
+2023-10-06 01:50:57,787: Stored results at runs_regional/531_basins_multi_forcings_temporal_split_ensemble_member_0_0510_195856/validation/model_epoch014/validation_results.p
+2023-10-06 01:50:57,798: Epoch 14 average validation loss: 0.01979 -- Median validation metrics: avg_loss: 0.01979, NSE: 0.76008
+2023-10-06 02:09:17,228: Epoch 15 average loss: avg_loss: 0.01153, avg_total_loss: 0.01153
+2023-10-06 02:15:51,200: Stored metrics at runs_regional/531_basins_multi_forcings_temporal_split_ensemble_member_0_0510_195856/validation/model_epoch015/validation_metrics.csv
+2023-10-06 02:15:51,329: Stored results at runs_regional/531_basins_multi_forcings_temporal_split_ensemble_member_0_0510_195856/validation/model_epoch015/validation_results.p
+2023-10-06 02:15:51,339: Epoch 15 average validation loss: 0.02257 -- Median validation metrics: avg_loss: 0.02257, NSE: 0.75943
+2023-10-06 02:34:09,478: Epoch 16 average loss: avg_loss: 0.01130, avg_total_loss: 0.01130
+2023-10-06 02:40:40,020: Stored metrics at runs_regional/531_basins_multi_forcings_temporal_split_ensemble_member_0_0510_195856/validation/model_epoch016/validation_metrics.csv
+2023-10-06 02:40:40,162: Stored results at runs_regional/531_basins_multi_forcings_temporal_split_ensemble_member_0_0510_195856/validation/model_epoch016/validation_results.p
+2023-10-06 02:40:40,172: Epoch 16 average validation loss: 0.06373 -- Median validation metrics: avg_loss: 0.06373, NSE: 0.76551
+2023-10-06 02:58:57,699: Epoch 17 average loss: avg_loss: 0.01116, avg_total_loss: 0.01116
+2023-10-06 03:05:29,669: Stored metrics at runs_regional/531_basins_multi_forcings_temporal_split_ensemble_member_0_0510_195856/validation/model_epoch017/validation_metrics.csv
+2023-10-06 03:05:29,802: Stored results at runs_regional/531_basins_multi_forcings_temporal_split_ensemble_member_0_0510_195856/validation/model_epoch017/validation_results.p
+2023-10-06 03:05:29,812: Epoch 17 average validation loss: 0.02668 -- Median validation metrics: avg_loss: 0.02668, NSE: 0.76181
+2023-10-06 03:23:45,285: Epoch 18 average loss: avg_loss: 0.01099, avg_total_loss: 0.01099
+2023-10-06 03:30:16,651: Stored metrics at runs_regional/531_basins_multi_forcings_temporal_split_ensemble_member_0_0510_195856/validation/model_epoch018/validation_metrics.csv
+2023-10-06 03:30:16,784: Stored results at runs_regional/531_basins_multi_forcings_temporal_split_ensemble_member_0_0510_195856/validation/model_epoch018/validation_results.p
+2023-10-06 03:30:16,795: Epoch 18 average validation loss: 0.02770 -- Median validation metrics: avg_loss: 0.02770, NSE: 0.76108
+2023-10-06 03:48:35,506: Epoch 19 average loss: avg_loss: 0.01054, avg_total_loss: 0.01054
+2023-10-06 03:55:16,187: Stored metrics at runs_regional/531_basins_multi_forcings_temporal_split_ensemble_member_0_0510_195856/validation/model_epoch019/validation_metrics.csv
+2023-10-06 03:55:16,327: Stored results at runs_regional/531_basins_multi_forcings_temporal_split_ensemble_member_0_0510_195856/validation/model_epoch019/validation_results.p
+2023-10-06 03:55:16,337: Epoch 19 average validation loss: 0.02040 -- Median validation metrics: avg_loss: 0.02040, NSE: 0.76573
+2023-10-06 03:55:16,337: Setting learning rate to 0.0005
+2023-10-06 04:13:33,543: Epoch 20 average loss: avg_loss: 0.00893, avg_total_loss: 0.00893
+2023-10-06 04:20:12,767: Stored metrics at runs_regional/531_basins_multi_forcings_temporal_split_ensemble_member_0_0510_195856/validation/model_epoch020/validation_metrics.csv
+2023-10-06 04:20:12,902: Stored results at runs_regional/531_basins_multi_forcings_temporal_split_ensemble_member_0_0510_195856/validation/model_epoch020/validation_results.p
+2023-10-06 04:20:12,912: Epoch 20 average validation loss: 0.02625 -- Median validation metrics: avg_loss: 0.02625, NSE: 0.77699
+2023-10-06 04:38:29,835: Epoch 21 average loss: avg_loss: 0.00839, avg_total_loss: 0.00839
+2023-10-06 04:45:03,296: Stored metrics at runs_regional/531_basins_multi_forcings_temporal_split_ensemble_member_0_0510_195856/validation/model_epoch021/validation_metrics.csv
+2023-10-06 04:45:03,427: Stored results at runs_regional/531_basins_multi_forcings_temporal_split_ensemble_member_0_0510_195856/validation/model_epoch021/validation_results.p
+2023-10-06 04:45:03,437: Epoch 21 average validation loss: 0.02155 -- Median validation metrics: avg_loss: 0.02155, NSE: 0.76827
+2023-10-06 05:03:20,070: Epoch 22 average loss: avg_loss: 0.00804, avg_total_loss: 0.00804
+2023-10-06 05:09:50,023: Stored metrics at runs_regional/531_basins_multi_forcings_temporal_split_ensemble_member_0_0510_195856/validation/model_epoch022/validation_metrics.csv
+2023-10-06 05:09:50,153: Stored results at runs_regional/531_basins_multi_forcings_temporal_split_ensemble_member_0_0510_195856/validation/model_epoch022/validation_results.p
+2023-10-06 05:09:50,163: Epoch 22 average validation loss: 0.02067 -- Median validation metrics: avg_loss: 0.02067, NSE: 0.76285
+2023-10-06 05:28:03,264: Epoch 23 average loss: avg_loss: 0.00779, avg_total_loss: 0.00779
+2023-10-06 05:34:33,805: Stored metrics at runs_regional/531_basins_multi_forcings_temporal_split_ensemble_member_0_0510_195856/validation/model_epoch023/validation_metrics.csv
+2023-10-06 05:34:33,942: Stored results at runs_regional/531_basins_multi_forcings_temporal_split_ensemble_member_0_0510_195856/validation/model_epoch023/validation_results.p
+2023-10-06 05:34:33,952: Epoch 23 average validation loss: 0.02607 -- Median validation metrics: avg_loss: 0.02607, NSE: 0.77222
+2023-10-06 05:52:49,450: Epoch 24 average loss: avg_loss: 0.00759, avg_total_loss: 0.00759
+2023-10-06 05:59:21,014: Stored metrics at runs_regional/531_basins_multi_forcings_temporal_split_ensemble_member_0_0510_195856/validation/model_epoch024/validation_metrics.csv
+2023-10-06 05:59:21,151: Stored results at runs_regional/531_basins_multi_forcings_temporal_split_ensemble_member_0_0510_195856/validation/model_epoch024/validation_results.p
+2023-10-06 05:59:21,162: Epoch 24 average validation loss: 0.02756 -- Median validation metrics: avg_loss: 0.02756, NSE: 0.77641
+2023-10-06 05:59:21,162: Setting learning rate to 0.0001
+2023-10-06 06:17:38,847: Epoch 25 average loss: avg_loss: 0.00677, avg_total_loss: 0.00677
+2023-10-06 06:24:10,156: Stored metrics at runs_regional/531_basins_multi_forcings_temporal_split_ensemble_member_0_0510_195856/validation/model_epoch025/validation_metrics.csv
+2023-10-06 06:24:10,285: Stored results at runs_regional/531_basins_multi_forcings_temporal_split_ensemble_member_0_0510_195856/validation/model_epoch025/validation_results.p
+2023-10-06 06:24:10,295: Epoch 25 average validation loss: 0.02025 -- Median validation metrics: avg_loss: 0.02025, NSE: 0.77553
+2023-10-06 06:42:26,955: Epoch 26 average loss: avg_loss: 0.00640, avg_total_loss: 0.00640
+2023-10-06 06:49:07,173: Stored metrics at runs_regional/531_basins_multi_forcings_temporal_split_ensemble_member_0_0510_195856/validation/model_epoch026/validation_metrics.csv
+2023-10-06 06:49:07,313: Stored results at runs_regional/531_basins_multi_forcings_temporal_split_ensemble_member_0_0510_195856/validation/model_epoch026/validation_results.p
+2023-10-06 06:49:07,324: Epoch 26 average validation loss: 0.02073 -- Median validation metrics: avg_loss: 0.02073, NSE: 0.77498
+2023-10-06 07:07:24,486: Epoch 27 average loss: avg_loss: 0.00628, avg_total_loss: 0.00628
+2023-10-06 07:13:58,391: Stored metrics at runs_regional/531_basins_multi_forcings_temporal_split_ensemble_member_0_0510_195856/validation/model_epoch027/validation_metrics.csv
+2023-10-06 07:13:58,528: Stored results at runs_regional/531_basins_multi_forcings_temporal_split_ensemble_member_0_0510_195856/validation/model_epoch027/validation_results.p
+2023-10-06 07:13:58,538: Epoch 27 average validation loss: 0.02035 -- Median validation metrics: avg_loss: 0.02035, NSE: 0.77261
+2023-10-06 07:32:15,396: Epoch 28 average loss: avg_loss: 0.00612, avg_total_loss: 0.00612
+2023-10-06 07:38:49,661: Stored metrics at runs_regional/531_basins_multi_forcings_temporal_split_ensemble_member_0_0510_195856/validation/model_epoch028/validation_metrics.csv
+2023-10-06 07:38:49,809: Stored results at runs_regional/531_basins_multi_forcings_temporal_split_ensemble_member_0_0510_195856/validation/model_epoch028/validation_results.p
+2023-10-06 07:38:49,820: Epoch 28 average validation loss: 0.02021 -- Median validation metrics: avg_loss: 0.02021, NSE: 0.77688
+2023-10-06 07:57:16,489: Epoch 29 average loss: avg_loss: 0.00602, avg_total_loss: 0.00602
+2023-10-06 08:03:46,076: Stored metrics at runs_regional/531_basins_multi_forcings_temporal_split_ensemble_member_0_0510_195856/validation/model_epoch029/validation_metrics.csv
+2023-10-06 08:03:46,220: Stored results at runs_regional/531_basins_multi_forcings_temporal_split_ensemble_member_0_0510_195856/validation/model_epoch029/validation_results.p
+2023-10-06 08:03:46,231: Epoch 29 average validation loss: 0.02024 -- Median validation metrics: avg_loss: 0.02024, NSE: 0.77772
+2023-10-06 08:22:00,748: Epoch 30 average loss: avg_loss: 0.00602, avg_total_loss: 0.00602
+2023-10-06 08:28:26,985: Stored metrics at runs_regional/531_basins_multi_forcings_temporal_split_ensemble_member_0_0510_195856/validation/model_epoch030/validation_metrics.csv
+2023-10-06 08:28:27,128: Stored results at runs_regional/531_basins_multi_forcings_temporal_split_ensemble_member_0_0510_195856/validation/model_epoch030/validation_results.p
+2023-10-06 08:28:27,139: Epoch 30 average validation loss: 0.02025 -- Median validation metrics: avg_loss: 0.02025, NSE: 0.77656
+2023-10-31 01:08:16,497: Logging to /home/gsnearing/paper_data/runs_regional/531_basins_multi_forcings_temporal_split_ensemble_member_0_0510_195856/output.log initialized.
+2023-10-31 01:08:19,217: Uncaught exception
+Traceback (most recent call last):
+  File "/home/gsnearing/paper_data/neuralhydrology/nh_run.py", line 173, in <module>
+    _main()
+  File "/home/gsnearing/paper_data/neuralhydrology/nh_run.py", line 51, in _main
+    eval_run(run_dir=Path(args["run_dir"]), period=args["period"], epoch=args["epoch"], gpu=args["gpu"])
+  File "/home/gsnearing/paper_data/neuralhydrology/nh_run.py", line 169, in eval_run
+    start_evaluation(cfg=config, run_dir=run_dir, epoch=epoch, period=period)
+  File "/home/gsnearing/paper_data/neuralhydrology/evaluation/evaluate.py", line 22, in start_evaluation
+    tester = get_tester(cfg=cfg, run_dir=run_dir, period=period, init_model=True)
+  File "/home/gsnearing/paper_data/neuralhydrology/evaluation/__init__.py", line 35, in get_tester
+    return Tester(cfg=cfg, run_dir=run_dir, period=period, init_model=init_model)
+  File "/home/gsnearing/paper_data/neuralhydrology/evaluation/tester.py", line 508, in __init__
+    super(RegressionTester, self).__init__(cfg, run_dir, period, init_model)
+  File "/home/gsnearing/paper_data/neuralhydrology/evaluation/tester.py", line 61, in __init__
+    self._set_device()
+  File "/home/gsnearing/paper_data/neuralhydrology/evaluation/tester.py", line 87, in _set_device
+    if gpu_id > torch.cuda.device_count():
+  File "/home/gsnearing/miniconda3/envs/neuralhydrology/lib/python3.10/site-packages/torch/cuda/__init__.py", line 650, in device_count
+    nvml_count = _device_count_nvml()
+  File "/home/gsnearing/miniconda3/envs/neuralhydrology/lib/python3.10/site-packages/torch/cuda/__init__.py", line 632, in _device_count_nvml
+    raw_cnt = _raw_device_count_nvml()
+  File "/home/gsnearing/miniconda3/envs/neuralhydrology/lib/python3.10/site-packages/torch/cuda/__init__.py", line 544, in _raw_device_count_nvml
+    rc = nvml_h.nvmlInit()
+KeyboardInterrupt
+2023-10-31 01:11:39,862: Logging to /home/gsnearing/paper_data/runs_regional/531_basins_multi_forcings_temporal_split_ensemble_member_0_0510_195856/output.log initialized.
+2023-10-31 01:11:49,148: Uncaught exception
+Traceback (most recent call last):
+  File "/home/gsnearing/paper_data/neuralhydrology/nh_run.py", line 173, in <module>
+    _main()
+  File "/home/gsnearing/paper_data/neuralhydrology/nh_run.py", line 51, in _main
+    eval_run(run_dir=Path(args["run_dir"]), period=args["period"], epoch=args["epoch"], gpu=args["gpu"])
+  File "/home/gsnearing/paper_data/neuralhydrology/nh_run.py", line 169, in eval_run
+    start_evaluation(cfg=config, run_dir=run_dir, epoch=epoch, period=period)
+  File "/home/gsnearing/paper_data/neuralhydrology/evaluation/evaluate.py", line 22, in start_evaluation
+    tester = get_tester(cfg=cfg, run_dir=run_dir, period=period, init_model=True)
+  File "/home/gsnearing/paper_data/neuralhydrology/evaluation/__init__.py", line 35, in get_tester
+    return Tester(cfg=cfg, run_dir=run_dir, period=period, init_model=init_model)
+  File "/home/gsnearing/paper_data/neuralhydrology/evaluation/tester.py", line 508, in __init__
+    super(RegressionTester, self).__init__(cfg, run_dir, period, init_model)
+  File "/home/gsnearing/paper_data/neuralhydrology/evaluation/tester.py", line 81, in __init__
+    self._load_run_data()
+  File "/home/gsnearing/paper_data/neuralhydrology/evaluation/tester.py", line 100, in _load_run_data
+    self.basins = load_basin_file(getattr(self.cfg, f"{self.period}_basin_file"))
+  File "/home/gsnearing/paper_data/neuralhydrology/datautils/utils.py", line 65, in load_basin_file
+    with basin_file.open('r') as fp:
+  File "/home/gsnearing/miniconda3/envs/neuralhydrology/lib/python3.10/pathlib.py", line 1119, in open
+    return self._accessor.open(self, mode, buffering, encoding, errors,
+FileNotFoundError: [Errno 2] No such file or directory: 'data/experiment_data/basin_files/531_basin_list.txt'
+2023-10-31 01:20:50,640: Logging to /home/gsnearing/paper_data/runs_regional/531_basins_multi_forcings_temporal_split_ensemble_member_0_0510_195856/output.log initialized.
+2023-10-31 01:20:57,622: Using the model weights from /home/gsnearing/paper_data/runs_regional/531_basins_multi_forcings_temporal_split_ensemble_member_0_0510_195856/model_epoch029.pt
+2023-10-31 01:30:25,231: Stored metrics at /home/gsnearing/paper_data/runs_regional/531_basins_multi_forcings_temporal_split_ensemble_member_0_0510_195856/test/model_epoch029/test_metrics.csv
+2023-10-31 01:30:25,576: Stored results at /home/gsnearing/paper_data/runs_regional/531_basins_multi_forcings_temporal_split_ensemble_member_0_0510_195856/test/model_epoch029/test_results.p
+2025-08-18 01:23:18,598: Logging to \Users\charl\Documents\CAMELS\nh_model\output.log initialized.
+2025-08-18 01:23:18,667: Uncaught exception
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python312\Scripts\nh-run.exe\__main__.py", line 7, in <module>
+    sys.exit(_main())
+             ^^^^^^^
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python312\Lib\site-packages\neuralhydrology\nh_run.py", line 51, in _main
+    eval_run(run_dir=Path(args["run_dir"]), period=args["period"], epoch=args["epoch"], gpu=args["gpu"])
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python312\Lib\site-packages\neuralhydrology\nh_run.py", line 173, in eval_run
+    start_evaluation(cfg=config, run_dir=run_dir, epoch=epoch, period=period)
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python312\Lib\site-packages\neuralhydrology\evaluation\evaluate.py", line 22, in start_evaluation
+    tester = get_tester(cfg=cfg, run_dir=run_dir, period=period, init_model=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python312\Lib\site-packages\neuralhydrology\evaluation\__init__.py", line 35, in get_tester
+    return Tester(cfg=cfg, run_dir=run_dir, period=period, init_model=init_model)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python312\Lib\site-packages\neuralhydrology\evaluation\tester.py", line 525, in __init__
+    super(RegressionTester, self).__init__(cfg, run_dir, period, init_model)
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python312\Lib\site-packages\neuralhydrology\evaluation\tester.py", line 81, in __init__
+    self._load_run_data()
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python312\Lib\site-packages\neuralhydrology\evaluation\tester.py", line 110, in _load_run_data
+    self.basins = load_basin_file(getattr(self.cfg, f"{self.period}_basin_file"))
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python312\Lib\site-packages\neuralhydrology\datautils\utils.py", line 130, in load_basin_file
+    with basin_file.open('r') as fp:
+         ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python312\Lib\pathlib.py", line 1013, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '..\\basins\\basin_list.txt'
