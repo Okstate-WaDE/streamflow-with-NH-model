@@ -1,7 +1,7 @@
   36.91
  200.00
 4315664627
-dayl(s) prcp(mm/day) srad(W/m2) swe(mm) tmax(C) tmin(C) vp(Pa)
+Year Mnth Day Hr	Dayl(s)	PRCP(mm/day)	SRAD(W/m2)	SWE(mm)	Tmax(C)	Tmin(C)	Vp(Pa)
 1980 01 01 12	34214.40	0.00	271.52	0.00	1.98	1.98	493.15
 1980 01 02 12	34214.40	2.52	208.71	0.00	3.29	3.29	488.49
 1980 01 03 12	34214.40	1.02	166.03	0.00	1.36	1.36	461.61
