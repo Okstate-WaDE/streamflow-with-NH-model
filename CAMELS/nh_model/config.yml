@@ -5,18 +5,18 @@ data_dir: # path to CAMELS
 dataset: camelsus
 device: cpu
 dynamic_inputs:
-- prcp(mmperday)_daymet
-- srad(Wperm2)_daymet
+- prcp(mm/day)_daymet
+- srad(W/m2)_daymet
 - tmax(C)_daymet
 - tmin(C)_daymet
 - vp(Pa)_daymet
-- PRCP(mmperday)_nldas
-- SRAD(Wperm2)_nldas
+- PRCP(mm/day)_nldas
+- SRAD(W/m2)_nldas
 - Tmax(C)_nldas
 - Tmin(C)_nldas
 - Vp(Pa)_nldas
-- PRCP(mmperday)_maurer
-- SRAD(Wperm2)_maurer
+- PRCP(mm/day)_maurer
+- SRAD(W/m2)_maurer
 - Tmax(C)_maurer
 - Tmin(C)_maurer
 - Vp(Pa)_maurer
@@ -87,7 +87,7 @@ static_attributes:
 - low_prec_freq
 - low_prec_dur
 target_variables:
-- QObs(mmperd)
+- QObs(mm/d)
 test_basin_file: # probably CAMELS/basins/basin_list.txt
 test_end_date: 30/09/1999
 test_start_date: 01/10/1989
