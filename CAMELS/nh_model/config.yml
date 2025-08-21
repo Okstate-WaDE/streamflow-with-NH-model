@@ -88,15 +88,15 @@ static_attributes:
 - low_prec_dur
 target_variables:
 - QObs(mm/d)
-test_basin_file: # probably CAMELS/basins/basin_list.txt
+test_basin_file: # probably CAMELS/basin_list.txt
 test_end_date: 30/09/1999
 test_start_date: 01/10/1989
-train_basin_file: # probably CAMELS/basins/basin_list.txt
+train_basin_file: # probably CAMELS/basin_list.txt
 train_dir: # probably CAMELS/nh_model/train_data
 train_end_date: 30/09/2008
 train_start_date: 01/10/1999
 validate_every: 1
 validate_n_random_basins: 531
-validation_basin_file: # probably CAMELS/basins/basin_list.txt
+validation_basin_file: # probably CAMELS/basin_list.txt
 validation_end_date: 30/09/1989
 validation_start_date: 01/10/1980
