@@ -1,12 +1,12 @@
 #!/usr/bin/env python
 
 """
-This Python script was used to create the time_series folder for CAMGEN, using the data from CAMELS.
+This Python script was used to set up CAMGEN, using the data from CAMELS.
 If CAMGEN is already downloaded, running this should do nothing.
 """
 
 __author__ = "Charles Liu"
-__date__ = "08-18-2025"
+__date__ = "2025-08-22"
 
 from pathlib import Path
 from typing import Tuple
@@ -17,8 +17,8 @@ import pandas as pd
 # These paths assume that this file, import_time_series.py, is located directly in CAMGEN,
 # that CAMGEN and CAMELS are both located in the same directory, and that CAMELS is formatted correctly.
 # If this doesn't work, the paths may need to be modified manually.
-camgen_path = Path(os.path.dirname(__file__))
-camels_path = Path(os.path.join(camgen_path, "../CAMELS"))
+CAMGEN_PATH = Path(os.path.dirname(__file__))
+CAMELS_PATH = Path(os.path.join(CAMGEN_PATH, "../CAMELS"))
 
 def load_attributes(group : str) -> list:
     """
@@ -34,8 +34,8 @@ def load_attributes(group : str) -> list:
     list
         A list of all basins that attributes are stored for. Useful for forcings and streamflow later.
     """
-    src_path = os.path.join(camels_path, f"camels_attributes_v2.0/camels_{group}.txt")
-    dst_path = os.path.join(camgen_path, f"attributes/{group}.csv")
+    src_path = os.path.join(CAMELS_PATH, f"camels_attributes_v2.0/camels_{group}.txt")
+    dst_path = os.path.join(CAMGEN_PATH, f"attributes/{group}.csv")
     # Open CAMELS static attributes.
     with open(src_path, "r") as file:
         content = file.read()
@@ -65,7 +65,7 @@ def load_forcings(basin : str, forcing : str) -> Tuple[pd.DataFrame, int]:
         The area of the basin, in square meters.
     """
     # Using the Path class's .glob method, locate any files that might contain the data.
-    file_path = list(camels_path.glob(f"basin_mean_forcing/{forcing}/*/{basin}_*_forcing_leap.txt"))
+    file_path = list(CAMELS_PATH.glob(f"basin_mean_forcing/{forcing}/*/{basin}_*_forcing_leap.txt"))
     if file_path:
         # If files containing data exist, pick the first one.
         file_path = file_path[0]
@@ -103,7 +103,7 @@ def load_streamflow(basin : str, area : int) -> pd.Series:
         A Pandas Series indexed by DateTime, containing streamflow data.
     """
     # Using the Path class's .glob method, locate any files that might contain the data.
-    file_path = list(camels_path.glob(f"usgs_streamflow/*/{basin}_streamflow_qc.txt"))
+    file_path = list(CAMELS_PATH.glob(f"usgs_streamflow/*/{basin}_streamflow_qc.txt"))
     if file_path:
         # If files containing data exist, pick the first one.
         file_path = file_path[0]
@@ -131,7 +131,7 @@ for group in groups:
 
 for basin in basin_list:
     # Check if the basin already has data.
-    if os.path.exists(os.path.join(camgen_path, f"time_series/{basin}.nc4")):
+    if os.path.exists(os.path.join(CAMGEN_PATH, f"time_series/{basin}.nc4")):
         continue
     # Combine forcings.
     dfs = []
@@ -142,6 +142,6 @@ for basin in basin_list:
     # Add the observed streamflow data to the DataFrame.
     df["QObs(mmperd)"] = load_streamflow(basin, area)
     # Save as a NetCDF file.
-    file_path = os.path.join(camgen_path, f"time_series/{basin}.nc4")
+    file_path = os.path.join(CAMGEN_PATH, f"time_series/{basin}.nc4")
     xarr = df.to_xarray()
     xarr.to_netcdf(file_path)
